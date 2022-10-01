@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    open-in-view: false
+    database: postgresql
+  datasource:
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    url: jdbc:postgresql://postgres/${POSTGRES_DB}
+    hikari:
+      schema: credit_advisor
