@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    open-in-view: false
+    show-sql: true
+    database: postgresql
+  datasource:
+    hikari:
+      schema: credit_advisor
+    username: baeldung
+    password: baeldung
+    url: jdbc:postgresql://localhost:5432/postgres
+

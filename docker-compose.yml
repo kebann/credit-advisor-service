@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: credit-advisor-service
+    image: credit-advisor-service
+    environment:
+      - SPRING_PROFILES_ACTIVE
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    links:
+      - db
+    ports:
+      - "8080:8080"
+
+  db:
+    container_name: postgres
+    image: postgres
+    hostname: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
